@@ -1,4 +1,5 @@
 Xvfb :99 -screen 0 640x480x24 &
 export DISPLAY=:99
 
-python3 rp_handler.py
+./process cat-space-suit-simplified95.glb out.glb
+#python3 rp_handler.py
