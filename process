@@ -1,4 +1,4 @@
 assimp export $1 123_ori.obj
-python3 process.py -i 123 -o $2.obj
+python3 process.py 123 $2
 
 obj2gltf -i $2.obj -o $2
