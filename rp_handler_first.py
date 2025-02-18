@@ -1,0 +1,37 @@
+from datetime import datetime
+
+print(f"SETUP ---- A {datetime.now()}");
+
+import os
+import sys
+
+print(f"SETUP ---- B {datetime.now()}");
+
+import torch
+from diffusers import ControlNetModel, StableDiffusionXLControlNetPipeline, AutoencoderKL, UniPCMultistepScheduler
+from diffusers.utils import load_image
+from PIL import Image
+import numpy as np
+
+import subprocess
+
+print(f"SETUP ---- C {datetime.now()}");
+
+def b64to(b64_string, file_path):
+    with open(file_path, "wb") as file:
+        file.write(base64.b64decode(b64_string))
+
+def process(job_id, job_input):
+    print(f"RUN ---- A {datetime.now()}");
+
+    glb_input_b64 = job_input['glb']
+    glb_input_name = f"/tmp/input_{jog_id}.glb"
+    glb_output_name = f"/tmp/output_{jog_id}.glb"
+    b64to(glb_b64, glb_input_name);
+
+    subprocess.run("./process", glb_input_name, glb_output_name, stdout=sys.stdout, stderr=sys.stderr);
+#    os.system(f"./process {glb_input_name} {glb_output_name}")
+
+    return [glb_output_name]
+
+

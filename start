@@ -1,0 +1,3 @@
+(cd runpod && git pull)
+cp runpod/* .
+./run
