@@ -374,7 +374,7 @@ def tranfer_to_ori_mesh(filename_ori, filename_remesh, pred_rig):
 
 
 if __name__ == '__main__':
-    input_folder = ""
+    input_folder = "/tmp/"
     input_fileName = sys.argv[1]
     output_fileName = sys.argv[2]
 

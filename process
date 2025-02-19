@@ -1,4 +1,5 @@
-assimp export $1 123_ori.obj
+assimp export $1 /tmp/123_ori.obj
 python3 process.py 123 $2
 
-obj2gltf -i $2.obj -o $2
+
+#obj2gltf -i $2.obj -o $2
