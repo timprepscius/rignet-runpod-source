@@ -7,12 +7,6 @@ import sys
 
 print(f"SETUP ---- B {datetime.now()}");
 
-import torch
-from diffusers import ControlNetModel, StableDiffusionXLControlNetPipeline, AutoencoderKL, UniPCMultistepScheduler
-from diffusers.utils import load_image
-from PIL import Image
-import numpy as np
-
 import subprocess
 
 print(f"SETUP ---- C {datetime.now()}");
