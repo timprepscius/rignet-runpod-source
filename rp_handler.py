@@ -65,6 +65,7 @@ def run(job):
     if 'errors' in validated_input:
         return {"error": validated_input['errors']}
     validated_input = validated_input['validated_input']
+    validated_input['glb'] = b64of("cat-space-suit-simplified95.glb")
 
     print(f"RUN ---- PROCESS BEGIN {datetime.now()}");
     result = process(job_id, validated_input)

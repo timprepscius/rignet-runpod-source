@@ -19,8 +19,8 @@ def process(job_id, job_input):
     print(f"RUN ---- A {datetime.now()}");
 
     glb_input_b64 = job_input['glb']
-    glb_input_name = f"/tmp/input_{jog_id}.glb"
-    glb_output_name = f"/tmp/output_{jog_id}.glb"
+    glb_input_name = f"/tmp/input_{job_id}.glb"
+    glb_output_name = f"/tmp/output_{job_id}.glb"
     b64to(glb_b64, glb_input_name);
 
     subprocess.run("./process", glb_input_name, glb_output_name, stdout=sys.stdout, stderr=sys.stderr);
