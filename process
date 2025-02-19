@@ -1,10 +1,16 @@
 Xvfb :99 -screen 0 640x480x24 &
 export DISPLAY=:99
 
-assimp export $1 /tmp/123_ori.obj
-python3 process.py 123 $2
+#temp_dir=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 8`
 
+mkdir -p /tmp/rignet/
 
-#obj2gltf -i $2.obj -o $2
+assimp export $1 /tmp/rignet/123_ori.obj
+python3 process.py 123 /tmp/rignet/123456
+
+gzip -c /tmp/rignet/123456
+mv /tmp/rignet/123456.gz $2
+
+rm -rf /tmp/rignet
 
 kill %1
