@@ -8,8 +8,7 @@ mkdir -p /tmp/rignet/
 assimp export $1 /tmp/rignet/123_ori.obj
 python3 process.py 123
 
-gzip -c /tmp/rignet/123_ori_rig.txt
-mv /tmp/rignet/123_ori_rig.txt.gz $2
+gzip -c /tmp/rignet/123_ori_rig.txt > $2
 
 rm -rf /tmp/rignet
 
