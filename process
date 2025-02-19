@@ -1,5 +1,10 @@
+Xvfb :99 -screen 0 640x480x24 &
+export DISPLAY=:99
+
 assimp export $1 /tmp/123_ori.obj
 python3 process.py 123 $2
 
 
 #obj2gltf -i $2.obj -o $2
+
+kill %1
