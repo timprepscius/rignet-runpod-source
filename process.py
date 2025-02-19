@@ -376,7 +376,7 @@ def tranfer_to_ori_mesh(filename_ori, filename_remesh, pred_rig):
 if __name__ == '__main__':
     input_folder = "/tmp/rignet/"
     input_fileName = sys.argv[1]
-    output_fileName = sys.argv[2]
+    # output_fileName = sys.argv[2]
 
     # downsample_skinning is used to speed up the calculation of volumetric geodesic distance
     # and to save cpu memory in skinning calculation.
@@ -472,10 +472,10 @@ if __name__ == '__main__':
         # here we use original mesh tesselation (without remeshing)
         mesh_filename_ori = os.path.join(input_folder, '{:s}_ori.obj'.format(model_id))
         pred_rig = tranfer_to_ori_mesh(mesh_filename_ori, mesh_filename, pred_rig)
-        #output_fileName = mesh_filename_ori.replace('.obj', '_rig.txt')
+        output_fileName = mesh_filename_ori.replace('.obj', '_rig.txt')
         pred_rig.save(output_fileName)
     else:
         # here we use remeshed mesh
-        #output_fileName = mesh_filename.replace('.obj', '_rig.txt')
+        output_fileName = mesh_filename.replace('.obj', '_rig.txt')
         pred_rig.save(output_fileName)
     print("Done!")
