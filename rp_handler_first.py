@@ -8,6 +8,7 @@ import sys
 print(f"SETUP ---- B {datetime.now()}");
 
 import subprocess
+import base64
 
 print(f"SETUP ---- C {datetime.now()}");
 
