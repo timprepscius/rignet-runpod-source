@@ -1,4 +1,1 @@
-
-#cp cat-space-suit-simplified95.glb /tmp/cat-space-suit-simplified95.glb
-#./process /tmp/cat-space-suit-simplified95.glb /tmp/out.glb
 python3 rp_handler.py

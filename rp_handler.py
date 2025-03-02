@@ -78,9 +78,7 @@ def run(job):
         # image_url = rp_upload.upload_image(job['id'], img_path, index)
 
         job_output.append({
-            "image": data,
-            "path": img_path,
-            "parameters": validated_input
+            "skeleton": data
         })
 
     # Remove downloaded input objects
