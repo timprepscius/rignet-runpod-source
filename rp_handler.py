@@ -72,15 +72,15 @@ def run(job):
     result = process(job_id, validated_input)
     print(f"RUN ---- PROCESS END {datetime.now()}");
 
-    # result_b64 = b64of(result)
-    result_b64 = plaintextOf(result)
+    result_b64 = b64of(result)
+    # result_b64 = plaintextOf(result)
 
     # Remove downloaded input objects
     rp_cleanup.clean(['input_objects'])
 
     print(f"RUN ---- END {datetime.now()}");
 
-    return { "skeleton": result_b64 }
+    return { "skeleton_gz": result_b64 }
 
 if __name__ == '__main__':
     runpod.serverless.start({"handler": run})
