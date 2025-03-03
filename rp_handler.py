@@ -76,7 +76,7 @@ def run(job):
 
     print(f"RUN ---- END {datetime.now()}");
 
-    return { "output": result_b64 }
+    return { "skeleton": result_b64 }
 
 if __name__ == '__main__':
     runpod.serverless.start({"handler": run})
