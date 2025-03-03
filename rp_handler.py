@@ -6,8 +6,6 @@ from datetime import datetime
 print(f"SETUP ---- 0A {datetime.now()}");
 
 import os
-os.system("git pull")
-
 import uuid
 
 worker_id = str(uuid.uuid4());
