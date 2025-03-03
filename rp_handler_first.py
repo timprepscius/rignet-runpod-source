@@ -27,6 +27,6 @@ def process(job_id, job_input):
     subprocess.run(["/bin/bash", "process", glb_input_name, glb_output_name], stdout=sys.stdout, stderr=sys.stderr);
 #    os.system(f"./process {glb_input_name} {glb_output_name}")
 
-    return [glb_output_name]
+    return glb_output_name
 
 

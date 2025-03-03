@@ -69,22 +69,14 @@ def run(job):
     result = process(job_id, validated_input)
     print(f"RUN ---- PROCESS END {datetime.now()}");
 
-    job_output = []
-
-    for index, img_path in enumerate(result):
-        data = b64of(img_path)
-        # image_url = rp_upload.upload_image(job['id'], img_path, index)
-
-        job_output.append({
-            "skeleton": data
-        })
+    result_b64 = b64of(result)
 
     # Remove downloaded input objects
     rp_cleanup.clean(['input_objects'])
 
     print(f"RUN ---- END {datetime.now()}");
 
-    return { "job_results": job_output }
+    return { "output": result_b64 }
 
 if __name__ == '__main__':
     runpod.serverless.start({"handler": run})
