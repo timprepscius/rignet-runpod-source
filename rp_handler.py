@@ -43,8 +43,11 @@ def b64of(fileName):
 
     return base64.b64encode(out_data).decode("utf-8")
 
+def plaintextOf(fileName):
+    with open(fileName, "rt") as f:
+        return f.read();
+
 def run(job):
-    print(f"RUN ---- VERSION with controlnet again");
     print(f"RUN ---- START {datetime.now()}");
 
     job_input = job['input']
@@ -69,7 +72,8 @@ def run(job):
     result = process(job_id, validated_input)
     print(f"RUN ---- PROCESS END {datetime.now()}");
 
-    result_b64 = b64of(result)
+    # result_b64 = b64of(result)
+    result_b64 = plaintextOf(result)
 
     # Remove downloaded input objects
     rp_cleanup.clean(['input_objects'])
